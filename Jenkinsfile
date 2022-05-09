@@ -16,7 +16,8 @@ pipeline {
                 }
                 withSonarQubeEnv('SonarQubeServer') {
 
-                    sh """${scannerHome}/bin/sonar-scanner -Dsonar.login=admin -Dsonar.password=qweqwe"""
+//                     sh """${scannerHome}/bin/sonar-scanner -Dsonar.login=admin -Dsonar.password=qweqwe"""
+                    sh """mvn clean deploy sonar:sonar"""
                 }
             }
         }
