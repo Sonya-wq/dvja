@@ -13,8 +13,9 @@
             steps {
                 script {
                     scannerHome = tool 'SonarQube';
+                    echo "${scannerHome}";
                 }
-                echo "${scannerHome}"
+
             }
         }
         stage("Deploy Prod") {
