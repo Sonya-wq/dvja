@@ -14,11 +14,7 @@
                 SCANNER_HOME = tool 'SonarQubeServer'
             }
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    echo "not here"
-                    sh "$SCANNER_HOME/bin/sonar-scanner"
-                    echo "here"
-                }
+                echo SCANNER_HOME
             }
         }
         stage("Deploy Prod") {
