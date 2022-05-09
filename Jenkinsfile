@@ -16,7 +16,7 @@ pipeline {
                 }
                 withSonarQubeEnv('SonarQubeServer') {
 
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh """${scannerHome}/bin/sonar-scanner"""
                 }
             }
         }
