@@ -1,4 +1,4 @@
--pipeline {
+pipeline {
     agent any
 
     environment {
@@ -10,11 +10,11 @@
             when {
                 branch "master"
             }
-//             environment {
-//                 SCANNER_HOME = tool 'SonarQubeServer'
-//             }
             steps {
-
+                withSonarQubeEnv('SonarQubeServer') {
+                    def scannerHome = tool 'SonarScanner 4.0';
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
         stage("Deploy Prod") {
