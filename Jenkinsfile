@@ -1,4 +1,4 @@
-pipeline {
+-pipeline {
     agent any
 
     environment {
@@ -6,6 +6,15 @@ pipeline {
     }
 
     stages {
+        stage("Sonar Scan") {
+            when {
+                branch "master"
+            }
+            steps {
+                def scannerHome = tool 'SonarScanner 4.0';
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }
         stage("Deploy Prod") {
             when {
                 branch "master"
