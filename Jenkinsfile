@@ -16,7 +16,7 @@ pipeline {
                 }
                 withSonarQubeEnv('SonarQubeServer') {
                     withMaven(maven: 'mvn') {
-                        sh "mvn clean deploy sonar:sonar"
+                        sh "mvn clean package sonar:sonar"
                     }
 //                     sh """${scannerHome}/bin/sonar-scanner -Dsonar.login=admin -Dsonar.password=qweqwe"""
                 }
