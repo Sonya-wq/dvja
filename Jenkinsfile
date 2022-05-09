@@ -16,7 +16,7 @@ pipeline {
                 }
                 withSonarQubeEnv('SonarQubeServer') {
 
-                    sh """${scannerHome}/bin/sonar-scanner -Dsonar.login=${SONAR_TOKEN}"""
+                    sh """${scannerHome}/bin/sonar-scanner -Dsonar.login=${env.SONAR_AUTH_TOKEN}"""
                 }
             }
         }
