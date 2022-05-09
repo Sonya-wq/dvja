@@ -14,7 +14,7 @@
 //                 SCANNER_HOME = tool 'SonarQubeServer'
 //             }
             steps {
-                echo "111"
+
             }
         }
         stage("Deploy Prod") {
