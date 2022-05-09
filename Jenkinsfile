@@ -14,10 +14,8 @@
                 script {
                     scannerHome = tool 'SonarQube';
                 }
-                withSonarQubeEnv() {
+                echo "Not here"
 
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
             }
         }
         stage("Deploy Prod") {
