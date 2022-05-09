@@ -10,12 +10,15 @@
             when {
                 branch "master"
             }
+            environment {
+                SCANNER_HOME = tool 'SonarQubeServer'
+            }
             steps {
-                script {
-                    scannerHome = tool 'SonarQube';
-                    echo "${scannerHome}";
+                withSonarQubeEnv('SonarQube') {
+                    echo "not here"
+                    sh "${scannerHome}/bin/sonar-scanner"
+                    echo "here"
                 }
-
             }
         }
         stage("Deploy Prod") {
