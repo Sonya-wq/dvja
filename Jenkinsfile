@@ -11,8 +11,11 @@ pipeline {
                 branch "master"
             }
             steps {
+                script {
+                    scannerHome = tool 'SonarQube';
+                }
                 withSonarQubeEnv('SonarQubeServer') {
-                    def scannerHome = tool 'SonarScanner 4.0';
+
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
