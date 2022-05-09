@@ -15,7 +15,11 @@
                     scannerHome = tool 'SonarQube';
                 }
                 echo "Not here"
-
+                withSonarQubeEnv('SonarQubeServer') {
+                    echo "not here"
+                    sh "${scannerHome}/bin/sonar-scanner"
+                    echo "here"
+                }
             }
         }
         stage("Deploy Prod") {
