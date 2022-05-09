@@ -15,7 +15,6 @@
                     scannerHome = tool 'SonarQube';
                 }
                 echo "${scannerHome}"
-
             }
         }
         stage("Deploy Prod") {
