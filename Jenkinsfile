@@ -10,9 +10,9 @@
             when {
                 branch "master"
             }
-            environment {
-                SCANNER_HOME = tool 'SonarQubeServer'
-            }
+//             environment {
+//                 SCANNER_HOME = tool 'SonarQubeServer'
+//             }
             steps {
                 echo "111"
             }
