@@ -16,7 +16,7 @@
             steps {
                 withSonarQubeEnv('SonarQube') {
                     echo "not here"
-                    sh "${SCANNER_HOME}/bin/sonar-scanner"
+                    sh "$SCANNER_HOME/bin/sonar-scanner"
                     echo "here"
                 }
             }
