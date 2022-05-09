@@ -14,7 +14,7 @@
                 script {
                     scannerHome = tool 'SonarScanner 4.0';
                 }
-                withSonarQubeEnv('SonarQubeServer') {
+                withSonarQubeEnv() {
 
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
